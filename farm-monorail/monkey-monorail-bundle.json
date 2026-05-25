@@ -1,0 +1,428 @@
+{
+  "schema_version": "1.0",
+  "bundle_version": "v2",
+  "updated": "2026-05",
+  "company": {
+    "legal_name": "Fajar Jadi Sdn Bhd",
+    "trading_brand": "Monkey Monorail",
+    "showroom": {
+      "line_1": "Lot 103, Ground Floor, MDLD 7011",
+      "line_2": "Bdr Sri Perdana Phase 3",
+      "line_3": "Jalan Silam",
+      "postcode": "91100",
+      "city": "Lahad Datu",
+      "state": "Sabah",
+      "country": "Malaysia",
+      "lease_active": true,
+      "lease_start": "2026-02-01",
+      "lease_end": "2029-01-31",
+      "size_sqft": 2610,
+      "building_type": "2-story shoplot"
+    },
+    "primary_contact": {
+      "name": "Jeffrey Tay",
+      "phone": "012-831 3383",
+      "whatsapp": "012-831 3383",
+      "email": "jeffrey3383@gmail.com"
+    },
+    "operating_region": "Sabah, East Malaysia"
+  },
+  "brand": {
+    "name": "Monkey Monorail",
+    "by_line": "by Fajar Jadi Sdn Bhd",
+    "tagline_en": "Built Strong. Built to Last.",
+    "tagline_bm": "Dibina kukuh. Dibina untuk bertahan.",
+    "logo_files": {
+      "white_bg": "monkey_logo.jpg",
+      "transparent": "monkey_logo_transparent.png"
+    },
+    "logo_description": "Cartoon monkey in yellow hard hat seated on a black mining cart; MONKEY wordmark in black sans-serif above MONORAIL in 3D orange"
+  },
+  "product": {
+    "model": "7ZDGS-300A",
+    "manufacturer": "Fujian Nanping Hongtai",
+    "standard": "Q/NPHT 026-2024",
+    "category": "rack-and-pinion plantation monorail",
+    "engine": {
+      "make": "Yamaha",
+      "model": "MZ175",
+      "type": "single-cylinder 4-stroke OHV, air-cooled",
+      "displacement_ml": 171,
+      "displacement_class_cc": 175,
+      "rated_power_kw": 3.3,
+      "rated_power_hp": 4.5,
+      "rated_rpm": 3600,
+      "fuel_type": "petrol",
+      "fuel_grade": "RON 92",
+      "fuel_consumption_l_per_hour_typical": 1.2,
+      "fuel_consumption_l_per_tonne_ffb": 7,
+      "fuel_tank_l": 3.6
+    },
+    "transport": {
+      "max_slope_deg": 45,
+      "cargo_capacity_kg_per_cart": 300,
+      "cargo_capacity_ffb_bunches_per_cart": 22,
+      "operating_speed_ms_min": 0.4,
+      "operating_speed_ms_max": 0.8,
+      "drive_system": "rack-and-pinion",
+      "cart_bed_mm": {
+        "length": 2000,
+        "width": 550,
+        "height": 430
+      },
+      "operators_required": 1,
+      "all_weather": true,
+      "useful_life_years_min": 10,
+      "useful_life_years_max": 15
+    },
+    "rail": {
+      "material": "Q235 hot-dip galvanized carbon steel",
+      "wall_thickness_mm_min": 2.5,
+      "post_spacing_m_max": 1.5,
+      "min_curve_radius_m": 1.0,
+      "ground_clearance_cm": 20
+    }
+  },
+  "warranty": {
+    "engine_years": 1,
+    "engine_coverage": "Yamaha MZ175 manufacturer defects, parts and labour, Sabah-wide service network",
+    "railing_years": 5,
+    "railing_coverage": "Q235 hot-dip galvanized rack rail and steel posts, structural integrity and weld failure under normal plantation use",
+    "note": "Fajar Jadi's offer overrides supplier's 3-year default"
+  },
+  "pricing_2026_sabah_rm": {
+    "currency": "MYR",
+    "rack_rail_per_m": 80,
+    "post_per_unit": 30,
+    "post_spacing_m": 1.5,
+    "locomotive_per_unit": 14000,
+    "cart_300kg_per_unit": 2000,
+    "y_switch_per_unit": 1800,
+    "installation_pct_of_hardware": 0.35,
+    "operator_per_month": 1800,
+    "petrol_subsidized_per_l": 1.99
+  },
+  "sizing_rules": {
+    "rail_length_formula_simple": "rail_length_m = acres * shape_density",
+    "rail_length_formula_geometric": "rail_length_m = lanes * long_side + (lanes * spur_length_5m)",
+    "shape_aware_density_m_per_acre": {
+      "square_1:1": 88,
+      "rectangular_1:3": 100,
+      "long_strip_1:5": 130,
+      "_note": "Sabah NCR/NT smallholdings typically 1:3 to 1:5 aspect ratio (road-frontage strips)"
+    },
+    "rail_density_m_per_acre_LEGACY": {
+      "gentle": {
+        "slope_deg_max": 15,
+        "density": 40,
+        "_status": "DEPRECATED — underestimates rail length"
+      },
+      "moderate": {
+        "slope_deg_min": 15,
+        "slope_deg_max": 30,
+        "density": 50,
+        "_status": "DEPRECATED"
+      },
+      "steep": {
+        "slope_deg_min": 30,
+        "slope_deg_max": 45,
+        "density": 60,
+        "_status": "DEPRECATED"
+      }
+    },
+    "default_aspect_ratio_sabah": 3.0,
+    "lane_spacing_m_optimal": 50,
+    "lane_spacing_m_max": 50,
+    "worker_carry_m_max": 25,
+    "spur_per_lane_m": 5,
+    "locomotives_formula": "locomotives = MAX(1, CEIL(hectares / 35))",
+    "carts_per_locomotive": 3,
+    "switches_formula": "switches = MAX(2, lanes - 1)",
+    "post_spacing_m": 1.5,
+    "acres_to_hectares": 0.404686,
+    "_methodology_note": "Updated 2026-05 after empirical validation against MPOB, Jabatan Pertanian Sabah, and Lahad Datu/Tongod field data. Old 'acres × density' heuristic underestimated rail length by 50-150% for realistic Sabah plot shapes.",
+    "_locomotives_formula_caveat": "The MAX(1, CEIL(hectares / 35)) formula predicts 1 locomotive at every size in sizing_matrix_2026, but the field-validated matrix specifies 2 locomotives at 30 acres (12.14 ha). The validated matrix governs; treat the divisor-35 formula as a coarse lower bound pending correction."
+  },
+  "sabah_benchmarks_2026": {
+    "ffb_yield_t_per_acre_per_year": 8.6,
+    "ffb_price_rm_per_tonne_min": 600,
+    "ffb_price_rm_per_tonne_max": 800,
+    "harvest_rounds_per_year": 26,
+    "lorry_diesel_l_per_tonne_ffb": 35,
+    "lorry_rain_days_lost_per_year": 45,
+    "lorry_workers_per_system": 3,
+    "road_maintenance_rm_per_acre_per_year": 3000
+  },
+  "default_case_study_5_acres_moderate": {
+    "estate_size_acres": 5,
+    "estate_size_hectares": 2.02,
+    "terrain": "moderate",
+    "slope_deg_range": [
+      15,
+      30
+    ],
+    "density_m_per_acre": 50,
+    "rail_length_m": 250,
+    "locomotives": 1,
+    "carts": 3,
+    "switches": 2,
+    "ffb_yield_t_per_year": 43.0,
+    "harvest_rounds_per_year": 26,
+    "turnkey_capex_rm": 65624,
+    "current_burden_rm_per_year": 121155,
+    "current_burden_breakdown_rm": {
+      "driver_and_2_loaders": 62400,
+      "lorry_depreciation_10yr": 13500,
+      "diesel_35l_per_tonne": 10114,
+      "road_maintenance": 15000,
+      "tyres_insurance_service": 15900,
+      "rain_days_lost_revenue": 4241
+    },
+    "monorail_burden_rm_per_year": 31790,
+    "monorail_burden_breakdown_rm": {
+      "operator_systemwide": 21600,
+      "petrol_yamaha_mz175": 599,
+      "maintenance_reserve": 4380,
+      "depreciation_10yr": 5211,
+      "road_maintenance": 0,
+      "rain_days_lost": 0
+    },
+    "annual_saving_rm": 89365,
+    "payback_period_years": 0.8,
+    "ten_year_net_saving_rm": 772000
+  },
+  "guardrails_never_use": {
+    "wrong_engine": [
+      "Briggs & Stratton 200cc",
+      "200cc 4 HP",
+      "diesel engine",
+      "electric drive",
+      "Yamaha MZ200"
+    ],
+    "wrong_capacity": [
+      "500 kg cargo",
+      "500kg per cart"
+    ],
+    "wrong_power": [
+      "3.8 kW",
+      "5 HP",
+      "200cc class"
+    ],
+    "wrong_address": [
+      "Kota Kinabalu",
+      "88300",
+      "Taman Sinar Baru",
+      "DBKK No.186"
+    ],
+    "wrong_warranty": [
+      "3 years",
+      "3-year blanket",
+      "1 year (alone)",
+      "5 years (alone)"
+    ],
+    "wrong_scope": [
+      "hydroponics",
+      "vertical farming",
+      "greenhouse cultivation",
+      "indoor agriculture",
+      "strawberry farming",
+      "tomato greenhouse"
+    ]
+  },
+  "sensitive_data_never_publish": {
+    "source": "Perjanjian_Sewa_Dengan_Petunjukalam.pdf (tenancy agreement)",
+    "fields": [
+      "tenant IC number",
+      "landlord IC number",
+      "witness IC numbers",
+      "Maybank account number",
+      "tenant home address",
+      "rent amount",
+      "deposit amount"
+    ]
+  },
+  "primary_use_cases": [
+    {
+      "rank": 1,
+      "use": "palm oil FFB transport",
+      "share_of_pitch": "~90%"
+    },
+    {
+      "rank": 2,
+      "use": "fruit orchard cargo (durian, rambutan, dragonfruit)"
+    },
+    {
+      "rank": 3,
+      "use": "sand and timber transport"
+    }
+  ],
+  "operational_throughput": {
+    "_source": "Computed from Hongtai 7ZDGS-300A specs + Sabah palm operations standards",
+    "cart_round_trip_cycle_min_per_500m_rail": 22,
+    "cart_round_trip_cycle_formula": "field_load + 2*(rail_length/2/speed/60) + station_unload + buffer",
+    "field_loading_time_min_per_cart": 4,
+    "monorail_avg_speed_m_per_s": 0.6,
+    "monorail_speed_range_m_per_s": [
+      0.4,
+      0.8
+    ],
+    "station_unload_time_min": 2,
+    "cycle_buffer_min": 2,
+    "lorry_transfer_kg_per_min_manual_2_men": 150,
+    "lorry_transfer_kg_per_min_with_tipper": 500,
+    "harvester_setup_time_min": 30,
+    "lorry_drive_to_mill_min_typical_sabah": 45,
+    "ffa_window_hours_max": 24
+  },
+  "harvest_day_scheduling": {
+    "5_acres_1to3_strip": {
+      "ffb_per_round_t": 1.65,
+      "cart_loads": 6,
+      "cycles_per_cart": 2,
+      "cart_cycle_min": 22,
+      "total_operation_min": 76,
+      "total_operation_hr": 1.27,
+      "lorry_wait_at_station_min": 26,
+      "lorry_trips": "1 × 3-ton",
+      "harvester_start": "06:00",
+      "lorry_arrives": "06:50",
+      "lorry_departs": "07:16",
+      "ffb_at_mill": "08:01"
+    },
+    "10_acres_1to5_strip": {
+      "ffb_per_round_t": 3.31,
+      "cart_loads": 12,
+      "cycles_per_cart": 4,
+      "cart_cycle_min": 33,
+      "total_operation_min": 180,
+      "total_operation_hr": 3.0,
+      "lorry_wait_at_station_min": 37,
+      "lorry_trips": "1 × 5-ton OR 2 × 3-ton"
+    },
+    "15_acres_1to3_strip": {
+      "ffb_per_round_t": 4.96,
+      "cart_loads": 17,
+      "cycles_per_cart": 6,
+      "cart_cycle_min": 44,
+      "total_operation_min": 319,
+      "total_operation_hr": 5.3,
+      "lorry_wait_at_station_min": 48,
+      "lorry_trips": "2 × 3-ton"
+    },
+    "30_acres_1to3_strip": {
+      "ffb_per_round_t": 9.92,
+      "cart_loads": 34,
+      "cycles_per_cart": 6,
+      "cart_cycle_min": 93,
+      "total_operation_min": 396,
+      "total_operation_hr_range": [
+        6,
+        8
+      ],
+      "lorry_wait_at_station_min_per_trip": 45,
+      "lorry_trips": "3 × 3-ton OR 1 × 10-ton"
+    },
+    "best_practice_call_lorry_min_before_last_cart": 30
+  },
+  "sizing_matrix_2026": {
+    "_source": "Geometric calculation + Sabah field data (MPOB 2024, Jabatan Pertanian Sabah, OPIEJ 2008, ESSD 2021)",
+    "_note": "All four common Sabah estate sizes; intermediate sizes interpolate linearly",
+    "5_acres": {
+      "hectares": 2.02,
+      "shape": "1:3 strip",
+      "plot_dim_m": [
+        82,
+        246
+      ],
+      "rail_length_m": 503,
+      "lanes": 2,
+      "carts": 3,
+      "locomotives": 1,
+      "switches": 2,
+      "ffb_t_per_year": 43,
+      "turnkey_rm": 99766,
+      "annual_saving_rm": 89365,
+      "payback_years": 1.1
+    },
+    "10_acres": {
+      "hectares": 4.05,
+      "shape": "1:5 strip",
+      "plot_dim_m": [
+        90,
+        450
+      ],
+      "rail_length_m": 910,
+      "lanes": 2,
+      "carts": 3,
+      "locomotives": 1,
+      "switches": 2,
+      "ffb_t_per_year": 86,
+      "turnkey_rm": 154686,
+      "annual_saving_rm": 178730,
+      "payback_years": 0.9
+    },
+    "15_acres": {
+      "hectares": 6.07,
+      "shape": "1:3 strip",
+      "plot_dim_m": [
+        142,
+        427
+      ],
+      "rail_length_m": 1295,
+      "lanes": 3,
+      "carts": 3,
+      "locomotives": 1,
+      "switches": 2,
+      "ffb_t_per_year": 129,
+      "turnkey_rm": 206736,
+      "annual_saving_rm": 268095,
+      "payback_years": 0.8
+    },
+    "30_acres": {
+      "hectares": 12.14,
+      "shape": "1:3 strip",
+      "plot_dim_m": [
+        201,
+        604
+      ],
+      "rail_length_m": 3043,
+      "lanes": 5,
+      "carts": 6,
+      "locomotives": 2,
+      "switches": 4,
+      "ffb_t_per_year": 258,
+      "turnkey_rm": 447487,
+      "annual_saving_rm": 536190,
+      "payback_years": 0.8
+    }
+  },
+  "sabah_smallholder_reference_data": {
+    "_sources": [
+      "MPOB Sep 2025: 29,918 Sabah smallholders / 184,564 ha",
+      "OPIEJ 2008: Sabah smallholder avg 6.77 ha (~16.7 acres)",
+      "The Vibes 2022 (Tongod): typical farm 10-30 acres",
+      "Tandfonline 2022 (40 Sabah farms): range 0.81-7.73 ha",
+      "MPOB EPD Sabah: NCR/NT plots typically 1:3 to 1:5 strips",
+      "Basiron 2007 / Corley & Tinker 2008: 9m triangular standard"
+    ],
+    "average_sabah_smallholder_ha": 6.17,
+    "average_sabah_smallholder_acres": 15.24,
+    "tongod_typical_size_acres": [
+      10,
+      30
+    ],
+    "common_plot_aspect_ratios": [
+      3.0,
+      5.0
+    ],
+    "palm_spacing_m": 9.0,
+    "palms_per_hectare_standard": 148,
+    "ffb_yield_t_per_acre_per_year": 8.6,
+    "harvest_rounds_per_year": 26,
+    "tspks_2_0_target_under_ha": 10
+  },
+  "changelog": [
+    "v2 (2026-05): Added shape-aware rail density formula. Added operational_throughput, harvest_day_scheduling, sizing_matrix_2026, sabah_smallholder_reference_data. Deprecated legacy 'acres × density' formula (it underestimated rail length by 50-150%).",
+    "v2 (2026-05, repo): Removed showroom rent amount before committing per sensitive_data_never_publish policy. Added _locomotives_formula_caveat documenting the divisor-35 formula vs. validated matrix discrepancy at 30 acres."
+  ]
+}
